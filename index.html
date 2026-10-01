@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مُفكّرة — MUFAKRA</title>
+<meta name="description" content="مُفكّرة: يومك كمعلّم — الحصص والدروس الخصوصية والمدفوعات — في مكان واحد، دون إنترنت. MUFAKRA: your teaching day in one place, offline.">
+<meta name="theme-color" content="#F7F4EE">
+<meta property="og:title" content="مُفكّرة — MUFAKRA">
+<meta property="og:description" content="يومك كمعلّم في دفتر واحد، دون إنترنت. Your teaching day in one notebook, offline.">
+<meta property="og:image" content="https://mufakra.app/icon.png">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preload" href="fonts/IBMPlexSansArabic-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+@font-face{font-family:"Plex";src:url(fonts/IBMPlexSansArabic-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Plex";src:url(fonts/IBMPlexSansArabic-SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:"Plex";src:url(fonts/IBMPlexSansArabic-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+
+:root{
+  --paper:#F7F4EE; --sand:#EFEBE3; --line:#E4DFD5;
+  --ink:#12213A; --ink-2:#4E5B70; --ink-3:#5F6978;
+  --royal:#1E4BD1; --card:#FFFFFF;
+  --night:#12213A; --night-2:#1B2E52; --on-night:#B8C4DC; --on-night-blue:#9DB6F5; --gold:#E8C170;
+  --green:#11362E; --green-hi:#14966A; --green-text:#0E7552;
+  --rule:rgba(18,33,58,.07);
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0B1220;--sand:#111B2E;--line:#22304A;--ink:#E8EDF5;--ink-2:#B3BFD2;--ink-3:#93A1B8;--card:#111B2E;--rule:rgba(232,237,245,.06);--green-text:#3CC594}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.75 "Plex",system-ui,"Segoe UI",Tahoma,sans-serif;-webkit-font-smoothing:antialiased}
+html[lang=ar] [lang=en], html[lang=en] [lang=ar]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--royal);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+
+/* hero: ruled notebook paper with a margin line */
+.hero{position:relative;overflow:hidden;
+  background:
+    linear-gradient(to left,transparent 0 calc(64px - 1px),rgba(30,75,209,.16) calc(64px - 1px) 64px,transparent 64px),
+    repeating-linear-gradient(to bottom,transparent 0 31px,var(--rule) 31px 32px);
+  background-position:0 0,0 12px}
+html[dir=ltr] .hero{background:
+    linear-gradient(to right,transparent 0 calc(64px - 1px),rgba(30,75,209,.16) calc(64px - 1px) 64px,transparent 64px),
+    repeating-linear-gradient(to bottom,transparent 0 31px,var(--rule) 31px 32px);background-position:0 0,0 12px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:112px 0 96px}
+.ribbon{position:absolute;top:0;inset-inline-start:max(16px,calc((100% - 1080px)/2 + 20px));width:44px;height:132px;background:var(--royal);
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%);display:flex;justify-content:center;padding-top:14px;box-shadow:0 8px 16px rgba(18,33,58,.18)}
+.ribbon button{all:unset;cursor:pointer;color:#fff;font:700 14px/1 "Plex",sans-serif;width:44px;height:44px;display:grid;place-items:center;border-radius:50%}
+.ribbon button:focus-visible{outline:3px solid #fff;outline-offset:-6px}
+.brand{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-inline-start:76px}
+.mark{width:52px;height:52px;border-radius:14px;background:linear-gradient(#1B2F55,#0D192E);padding:8px}
+.brand b{font:700 22px/1 "Plex",sans-serif;letter-spacing:.01em}
+h1{font:700 clamp(40px,6.2vw,72px)/1.18 "Plex",sans-serif;margin:0 0 20px;letter-spacing:-.01em;max-width:11ch;padding-inline-start:76px}
+html[lang=en] h1{letter-spacing:-.025em;line-height:1.08;max-width:12ch}
+.lead{font-size:19px;color:var(--ink-2);max-width:34em;margin:0 0 28px;padding-inline-start:76px}
+.status{display:inline-flex;align-items:center;gap:10px;margin-inline-start:76px;padding:8px 16px;border:1px solid var(--line);background:var(--card);border-radius:999px;font-size:15px;font-weight:600}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--green-hi)}
+
+/* the one dark surface, as in the app: the "next" block on Today */
+.next{background:linear-gradient(160deg,var(--night-2),var(--night));color:#fff;border-radius:28px;padding:28px;box-shadow:0 24px 48px -16px rgba(18,33,58,.45);max-width:420px;justify-self:center;width:100%}
+.next .top{display:flex;justify-content:space-between;align-items:center;color:var(--on-night);font-size:15px;font-weight:600}
+.next h2{font:700 26px/1.35 "Plex",sans-serif;margin:18px 0 4px}
+.next .when{color:var(--on-night)}
+.next .row{display:flex;align-items:center;gap:22px;margin-top:22px}
+.ring{position:relative;width:112px;height:112px;flex:none}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+.ring .bg{stroke:rgba(255,255,255,.12)}
+.ring .fg{stroke:var(--on-night-blue);stroke-dasharray:289;stroke-dashoffset:289;animation:draw 1.6s .4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:86}}
+.ring .n{position:absolute;inset:0;display:grid;place-items:center;text-align:center;line-height:1.1;font-weight:700;font-size:28px}
+.ring .n small{display:block;font-size:13px;font-weight:400;color:var(--on-night)}
+.leaveby{background:rgba(232,193,112,.12);border:1px solid rgba(232,193,112,.35);color:var(--gold);border-radius:14px;padding:10px 14px;font-weight:600;font-size:15px;line-height:1.5}
+@media (prefers-reduced-motion:reduce){.ring .fg{animation:none;stroke-dashoffset:86} html{scroll-behavior:auto}}
+
+/* sections */
+section{padding:96px 0}
+h2.t{font:700 clamp(28px,4vw,44px)/1.3 "Plex",sans-serif;margin:0 0 16px;max-width:22ch;letter-spacing:-.005em}
+.sub{color:var(--ink-2);max-width:36em;margin:0 0 40px}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+
+.day{list-style:none;margin:0;padding:0;border-inline-start:2px solid var(--line)}
+.day li{position:relative;font-size:18px;display:grid;grid-template-columns:104px 1fr;gap:12px;padding:14px 28px 14px 0;padding-inline:24px 0}
+.day li::before{content:"";position:absolute;inset-inline-start:-7px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--night)}
+.day li.green::before{background:var(--green-hi)}
+.day time{font-weight:600;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.day strong{display:block;font-weight:600}
+.day li.green strong{color:var(--green-text)}
+.leave{display:inline-block;margin-top:2px;font-style:normal;font-size:14px;font-weight:600;color:#7A5300;background:#FFF1CC;border-radius:999px;padding:1px 12px}
+@media (prefers-color-scheme:dark){.leave{color:var(--gold);background:rgba(232,193,112,.14)}}
+.legend{margin-top:20px;font-size:15px;color:var(--ink-3)}
+
+/* the account, as an account book */
+.book{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 32px 24px;box-shadow:0 1px 6px rgba(18,33,58,.04)}
+.book h3{margin:0 0 4px;font:700 20px/1.4 "Plex",sans-serif}
+.book .who{color:var(--ink-3);font-size:15px;margin-bottom:12px}
+.book ul{list-style:none;margin:0;padding:0}
+.book li{display:flex;align-items:baseline;gap:10px;padding:10px 0}
+.dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px);min-width:16px}
+.amt,.total b{direction:ltr;unicode-bidi:isolate}
+.amt{font-weight:600;font-variant-numeric:tabular-nums}
+.book li.minus .amt{color:var(--green-text)}
+.book .total{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;padding-top:16px;border-top:2px solid var(--ink)}
+.book .total span:first-child{font-weight:700}
+.book .total b{font:700 34px/1 "Plex",sans-serif;color:#B83434;font-variant-numeric:tabular-nums}
+@media (prefers-color-scheme:dark){.book .total b{color:#FF8A8A}}
+.note{margin:16px 0 0;font-size:14px;color:var(--ink-3)}
+
+dl.more{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px;margin:40px 0 0}
+dl.more div{padding:20px 0;border-top:1px solid var(--line)}
+dt{font-weight:700;font-size:19px}
+dd{margin:4px 0 0;color:var(--ink-2)}
+
+/* privacy */
+.private{background:var(--night);color:#fff;border-radius:32px;padding:72px 56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.private h2{font:700 clamp(30px,4.4vw,52px)/1.25 "Plex",sans-serif;margin:0;max-width:12ch}
+.private ul{list-style:none;margin:0 0 24px;padding:0;color:var(--on-night)}
+.private li{padding:10px 0;border-top:1px solid rgba(255,255,255,.14)}
+.private li b{color:#fff;font-weight:600}
+.private a{color:#fff;font-weight:600}
+
+footer{padding:48px 0 64px;color:var(--ink-3);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:28px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px;padding:104px 0 64px}
+  .split{grid-template-columns:1fr;gap:40px}
+  dl.more{grid-template-columns:1fr}
+  .private{grid-template-columns:1fr;padding:48px 28px;border-radius:24px}
+  section{padding:64px 0}
+  .brand,h1,.lead{padding-inline-start:0} .status{margin-inline-start:0}
+  .brand{margin-top:36px}
+  .ribbon{inset-inline-start:16px;height:116px}
+  .brand{padding-inline-start:60px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="ribbon"><button id="lang" type="button" aria-label="Language / اللغة"><span lang="ar">EN</span><span lang="en">ع</span></button></div>
+  <div class="wrap">
+    <div>
+      <div class="brand"><svg class="mark" viewBox="0 0 66 66" aria-hidden="true">
+<defs>
+<linearGradient id="pl" x1="0" x2="1"><stop offset="0" stop-color="#F7F4EE"/><stop offset="1" stop-color="#E4DFD6"/></linearGradient>
+<linearGradient id="pr" x1="0" x2="1"><stop offset="0" stop-color="#E4DFD6"/><stop offset="1" stop-color="#F7F4EE"/></linearGradient>
+</defs>
+<path d="M4 8Q30 0 33 10V56Q30 50 4 56Z" fill="url(#pl)"/>
+<path d="M62 8Q36 0 33 10V56Q36 50 62 56Z" fill="url(#pr)"/>
+<path d="M33 10V56" stroke="#12213A" stroke-width="2.5" stroke-linecap="round" opacity=".9"/>
+<rect x="45.5" y="2.5" width="9" height="27" rx="2" fill="#000" opacity=".12"/>
+<rect x="44" y="1" width="9" height="27" rx="2" fill="#1E4BD1"/>
+</svg><b><span lang="ar">مُفكّرة</span><span lang="en">MUFAKRA</span></b></div>
+      <h1><span lang="ar">يومك كمعلّم، في دفتر واحد.</span><span lang="en">Your teaching day, in one notebook.</span></h1>
+      <p class="lead"><span lang="ar">الحصص والدروس الخصوصية والمدفوعات في مكان واحد، تعمل دون إنترنت، وبياناتك لا تغادر جهازك.</span><span lang="en">Classes, private lessons and payments in one place. It works offline, and your data never leaves your phone.</span></p>
+      <span class="status"><i></i><span lang="ar">لأندرويد · قيد الاختبار</span><span lang="en">For Android · in testing</span></span>
+    </div>
+    <aside class="next" aria-label="مثال على شاشة اليوم">
+      <div class="top"><span><span lang="ar">التالي</span><span lang="en">Up next</span></span><span><span lang="ar">مثال</span><span lang="en">Sample</span></span></div>
+      <h2><span lang="ar">درس خصوصي · فيزياء</span><span lang="en">Private lesson · Physics</span></h2>
+      <div class="when"><span lang="ar">يبدأ ٤:٣٠ م</span><span lang="en">Starts 4:30 PM</span></div>
+      <div class="row">
+        <div class="ring"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46"/></svg>
+          <div class="n"><div><span lang="ar">٤٢</span><span lang="en">42</span><small><span lang="ar">دقيقة</span><span lang="en">min</span></small></div></div></div>
+        <div class="leaveby"><span lang="ar">اخرج قبل ٣:٥٥ م<br>لتصل في موعدك</span><span lang="en">Leave by 3:55 PM<br>to arrive on time</span></div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap split">
+    <div>
+      <h2 class="t"><span lang="ar">اعرف ما التالي قبل أن يحين.</span><span lang="en">Know what is next before it comes.</span></h2>
+      <p class="sub"><span lang="ar">الحصص بلون، والدروس الخصوصية بلون آخر، فيفرق يومك بنظرة. وللدرس الخصوصي وقت مغادرة يحسب معه المشوار.</span><span lang="en">Classes in one colour, private lessons in another, so your day reads at a glance. A private lesson also gets a leave-by time that counts the trip.</span></p>
+      <p class="legend"><span lang="ar">يوم تجريبي</span><span lang="en">A sample day</span></p>
+    </div>
+    <ol class="day"><li class="ink"><time><span lang="ar">٨:٠٠ ص</span><span lang="en">8:00 AM</span></time><div><strong><span lang="ar">حصة · الصف الثاني</span><span lang="en">Class · Grade 2</span></strong></div></li><li class="ink"><time><span lang="ar">١١:٣٠ ص</span><span lang="en">11:30 AM</span></time><div><strong><span lang="ar">حصة · الصف الرابع</span><span lang="en">Class · Grade 4</span></strong></div></li><li class="green"><time><span lang="ar">٤:٣٠ م</span><span lang="en">4:30 PM</span></time><div><strong><span lang="ar">درس خصوصي · فيزياء</span><span lang="en">Private lesson · Physics</span></strong><em class="leave"><span lang="ar">اخرج قبل ٣:٥٥ م</span><span lang="en">Leave by 3:55 PM</span></em></div></li><li class="green"><time><span lang="ar">٦:٠٠ م</span><span lang="en">6:00 PM</span></time><div><strong><span lang="ar">مجموعة · رياضيات</span><span lang="en">Group · Maths</span></strong></div></li></ol>
+  </div>
+</section>
+
+<section style="background:var(--sand)">
+  <div class="wrap split">
+    <div class="book" role="group" aria-label="مثال على حساب طالب">
+      <h3><span lang="ar">حساب الطالب</span><span lang="en">A student's account</span></h3>
+      <div class="who"><span lang="ar">أرقام تجريبية</span><span lang="en">Sample figures</span></div>
+      <ul><li class=""><span class="what"><span lang="ar">دروس لم تُدفع بعد</span><span lang="en">Lessons not yet paid</span></span><span class="dots" aria-hidden="true"></span><span class="amt"><span lang="ar">٤٥٠</span><span lang="en">450</span></span></li><li class=""><span class="what"><span lang="ar">رصيد سابق، قبل استخدام التطبيق</span><span lang="en">Opening balance, from before the app</span></span><span class="dots" aria-hidden="true"></span><span class="amt"><span lang="ar">٣٠٠</span><span lang="en">300</span></span></li><li class="minus"><span class="what"><span lang="ar">إعفاء — ظروف الأسرة</span><span lang="en">Written off — family circumstances</span></span><span class="dots" aria-hidden="true"></span><span class="amt"><span lang="ar">−١٠٠</span><span lang="en">−100</span></span></li><li class="minus"><span class="what"><span lang="ar">دُفع</span><span lang="en">Paid</span></span><span class="dots" aria-hidden="true"></span><span class="amt"><span lang="ar">−٢٥٠</span><span lang="en">−250</span></span></li></ul>
+      <div class="total"><span><span lang="ar">المستحق الآن</span><span lang="en">Owed now</span></span><b><span lang="ar">٤٠٠</span><span lang="en">400</span></b></div>
+    </div>
+    <div>
+      <h2 class="t"><span lang="ar">حساب يشبه دفتر الحسابات.</span><span lang="en">Accounts that read like a ledger.</span></h2>
+      <p class="sub"><span lang="ar">لو على الطالب دين من قبل التطبيق، سجّله كرصيد سابق. ولو سامحت في جزء، سجّله إعفاءً بسبب. لا يُحسب الإعفاء مالاً مستلَماً، وتُسدَّد الدفعات من الأقدم أولاً.</span><span lang="en">If a student owed you before the app, record it as an opening balance. If you forgive part of it, record a write-off with a reason. A write-off never counts as money received, and payments settle the oldest first.</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="t"><span lang="ar">وتفاصيل صغيرة تريحك.</span><span lang="en">And small things that help.</span></h2>
+    <dl class="more"><div><dt><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></dt><dd><span lang="ar">رسالة جاهزة لولي الأمر أو للمجموعة كلها. أنت من يضغط إرسال، والتطبيق لا يرسل شيئاً بنفسه.</span><span lang="en">A ready message for a parent or a whole group. You press send; the app never sends anything by itself.</span></dd></div><div><dt><span lang="ar">تقارير PDF</span><span lang="en">PDF reports</span></dt><dd><span lang="ar">تقرير شهري لكل طالب أو لكل المدفوعات، تطبعه أو ترسله.</span><span lang="en">A monthly report per student or for all payments, to print or share.</span></dd></div><div><dt><span lang="ar">استيراد من Excel</span><span lang="en">Import from Excel</span></dt><dd><span lang="ar">لديك قائمة طلاب جاهزة؟ ارفعها مرة واحدة بدل الكتابة من جديد.</span><span lang="en">Already have a student list? Bring it in once instead of retyping.</span></dd></div><div><dt><span lang="ar">تذكيرات هادئة</span><span lang="en">Quiet reminders</span></dt><dd><span lang="ar">ساعات صمت تختارها، وإشعارات يمكنك إخفاء تفاصيلها عن شاشة القفل.</span><span lang="en">Quiet hours you choose, and notifications that can hide their details on the lock screen.</span></dd></div><div><dt><span lang="ar">نسخ احتياطي</span><span lang="en">Backups</span></dt><dd><span lang="ar">ملف مشفّر بكلمة مرور، أو مزامنة اختيارية إلى مجلد التطبيق المخفي في Google Drive الخاص بك.</span><span lang="en">A password-encrypted file, or optional sync to the app's hidden folder in your own Google Drive.</span></dd></div><div><dt><span lang="ar">عربي وإنجليزي</span><span lang="en">Arabic and English</span></dt><dd><span lang="ar">واجهة كاملة باللغتين، ووقت بنظام ١٢ ساعة أو ٢٤ ساعة.</span><span lang="en">Fully in both languages, with 12- or 24-hour time.</span></dd></div></dl>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="private" id="privacy">
+      <h2><span lang="ar">بياناتك على جهازك فقط.</span><span lang="en">Your data stays on your phone.</span></h2>
+      <div>
+        <ul>
+          <li><b><span lang="ar">بلا خادم</span><span lang="en">No server</span></b> — <span lang="ar">لا نملك خادماً، ولا نرى ما تكتبه.</span><span lang="en">we run none, and we never see what you write.</span></li>
+          <li><b><span lang="ar">بلا حساب</span><span lang="en">No account</span></b> — <span lang="ar">افتح التطبيق وابدأ.</span><span lang="en">open the app and start.</span></li>
+          <li><b><span lang="ar">بلا إعلانات</span><span lang="en">No ads</span></b> — <span lang="ar">ولا أدوات تتبّع ولا تحليلات.</span><span lang="en">and no trackers or analytics.</span></li>
+        </ul>
+        <a href="https://privacy.mufakra.app/"><span lang="ar">اقرأ سياسة الخصوصية</span><span lang="en">Read the privacy policy</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ahmed Abdelhamid · <span lang="ar">مُفكّرة</span><span lang="en">MUFAKRA</span></span>
+    <nav>
+      <a href="https://privacy.mufakra.app/"><span lang="ar">الخصوصية</span><span lang="en">Privacy</span></a>
+      <a href="https://privacy.mufakra.app/terms.html"><span lang="ar">الشروط</span><span lang="en">Terms</span></a>
+      <a href="mailto:privacy@mufakra.app">privacy@mufakra.app</a>
+    </nav>
+  </div>
+</footer>
+<script>
+(function () {
+  var root = document.documentElement, KEY = "mufakra_site_lang";
+  function set(l) {
+    root.lang = l; root.dir = l === "ar" ? "rtl" : "ltr";
+    document.title = l === "ar" ? "مُفكّرة — MUFAKRA" : "MUFAKRA — مُفكّرة";
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  set(saved || ((navigator.language || "ar").toLowerCase().indexOf("ar") === 0 ? "ar" : "en"));
+  document.getElementById("lang").addEventListener("click", function () {
+    var l = root.lang === "ar" ? "en" : "ar"; set(l);
+    try { localStorage.setItem(KEY, l); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
