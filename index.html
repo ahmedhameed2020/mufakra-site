@@ -56,8 +56,22 @@ html[dir=ltr] .hero{background:
 h1{font:700 clamp(40px,6.2vw,72px)/1.18 "Plex",sans-serif;margin:0 0 20px;letter-spacing:-.01em;max-width:11ch;padding-inline-start:76px}
 html[lang=en] h1{letter-spacing:-.025em;line-height:1.08;max-width:12ch}
 .lead{font-size:19px;color:var(--ink-2);max-width:34em;margin:0 0 28px;padding-inline-start:76px}
-.status{display:inline-flex;align-items:center;gap:10px;margin-inline-start:76px;padding:8px 16px;border:1px solid var(--line);background:var(--card);border-radius:999px;font-size:15px;font-weight:600}
-.status i{width:9px;height:9px;border-radius:50%;background:var(--green-hi)}
+.cta{margin-inline-start:76px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.cta a.go{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--royal);color:#fff;font:700 17px/1 "Plex",sans-serif;text-decoration:none;box-shadow:0 10px 24px -10px rgba(30,75,209,.7)}
+.cta a.go:hover{background:#173BA8}
+.cta a.go:focus-visible{outline-color:var(--ink)}
+.cta small{font-size:15px;color:var(--ink-2)}
+
+/* real screens, as they ship */
+.shots{padding:0 0 24px}
+.shots ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.shots figure{margin:0}
+.shots img{display:block;width:100%;height:auto;aspect-ratio:540/1170;object-fit:cover;border-radius:26px;border:1px solid var(--line);box-shadow:0 18px 36px -20px rgba(18,33,58,.35);background:var(--sand)}
+.shots figcaption{margin-top:12px;font-size:15px;font-weight:600;color:var(--ink-2)}
+@media (max-width:860px){
+  .shots ul{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;margin-inline:-16px;padding-inline:16px}
+  .shots li{flex:0 0 66%;max-width:280px;scroll-snap-align:start}
+}
 
 /* the one dark surface, as in the app: the "next" block on Today */
 .next{background:linear-gradient(160deg,var(--night-2),var(--night));color:#fff;border-radius:28px;padding:28px;box-shadow:0 24px 48px -16px rgba(18,33,58,.45);max-width:420px;justify-self:center;width:100%}
@@ -132,7 +146,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
   dl.more{grid-template-columns:1fr}
   .private{grid-template-columns:1fr;padding:48px 28px;border-radius:24px}
   section{padding:64px 0}
-  .brand,h1,.lead{padding-inline-start:0} .status{margin-inline-start:0}
+  .brand,h1,.lead{padding-inline-start:0} .cta{margin-inline-start:0}
   .brand{margin-top:36px}
   .ribbon{inset-inline-start:16px;height:116px}
   .brand{padding-inline-start:60px}
@@ -157,7 +171,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
 </svg><b><span lang="ar">مُفكّرة</span><span lang="en">MUFAKRA</span></b></div>
       <h1><span lang="ar">يومك كمعلّم، في دفتر واحد.</span><span lang="en">Your teaching day, in one notebook.</span></h1>
       <p class="lead"><span lang="ar">الحصص والدروس الخصوصية والمدفوعات في مكان واحد، تعمل دون إنترنت، وبياناتك لا تغادر جهازك.</span><span lang="en">Classes, private lessons and payments in one place. It works offline, and your data never leaves your phone.</span></p>
-      <span class="status"><i></i><span lang="ar">لأندرويد · قيد الاختبار</span><span lang="en">For Android · in testing</span></span>
+      <p class="cta"><a class="go" href="https://play.google.com/apps/testing/com.mufakra.app.mufakra" rel="noopener"><span lang="ar">جرّبها على Google Play</span><span lang="en">Try it on Google Play</span></a><small><span lang="ar">مجانية · لأندرويد · نسخة اختبار مفتوحة</span><span lang="en">Free · Android · open test</span></small></p>
     </div>
     <aside class="next" aria-label="مثال على شاشة اليوم">
       <div class="top"><span><span lang="ar">التالي</span><span lang="en">Up next</span></span><span><span lang="ar">مثال</span><span lang="en">Sample</span></span></div>
@@ -173,6 +187,12 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
 </header>
 
 <main>
+<section class="shots" aria-label="Screens">
+  <div class="wrap">
+    <ul><li><figure><img lang="ar" src="shots/ar-1-today.jpg" width="540" height="1170" loading="lazy" alt="شاشة اليوم في مُفكّرة: الدرس القادم بعدّاد تنازلي ومهام اليوم"><img lang="en" src="shots/en-1-today.jpg" width="540" height="1170" loading="lazy" alt="Mufakra's Today screen: the next lesson with a countdown, and today's tasks"><figcaption><span lang="ar">اليوم</span><span lang="en">Today</span></figcaption></figure></li><li><figure><img lang="ar" src="shots/ar-2-private-lessons.jpg" width="540" height="1170" loading="lazy" alt="قائمة الدروس الخصوصية مرتبة حسب اليوم"><img lang="en" src="shots/en-2-private-lessons.jpg" width="540" height="1170" loading="lazy" alt="Private lessons organised by day"><figcaption><span lang="ar">الدروس الخصوصية</span><span lang="en">Private lessons</span></figcaption></figure></li><li><figure><img lang="ar" src="shots/ar-3-student-account.jpg" width="540" height="1170" loading="lazy" alt="حساب طالب يوضح المستحق والدفعات"><img lang="en" src="shots/en-3-student-account.jpg" width="540" height="1170" loading="lazy" alt="A student's account showing what is owed and what was paid"><figcaption><span lang="ar">حساب الطالب</span><span lang="en">Student account</span></figcaption></figure></li><li><figure><img lang="ar" src="shots/ar-7-tasks.jpg" width="540" height="1170" loading="lazy" alt="قائمة المهام المرتبطة بالطلاب والحصص"><img lang="en" src="shots/en-7-tasks.jpg" width="540" height="1170" loading="lazy" alt="The task list, tied to students and classes"><figcaption><span lang="ar">المهام</span><span lang="en">Tasks</span></figcaption></figure></li></ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap split">
     <div>
@@ -225,7 +245,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Ahmed Abdelhamid · <span lang="ar">مُفكّرة</span><span lang="en">MUFAKRA</span></span>
+    <span>© 2026 FlowTech Solutions · <span lang="ar">مُفكّرة</span><span lang="en">MUFAKRA</span></span>
     <nav>
       <a href="https://privacy.mufakra.app/"><span lang="ar">الخصوصية</span><span lang="en">Privacy</span></a>
       <a href="https://privacy.mufakra.app/terms.html"><span lang="ar">الشروط</span><span lang="en">Terms</span></a>
