@@ -87,7 +87,7 @@ html[lang=en] h1{letter-spacing:-.025em;line-height:1.08;max-width:12ch}
 }
 
 /* the one dark surface, as in the app: the "next" block on Today */
-.next{background:linear-gradient(160deg,var(--night-2),var(--night));color:#fff;border-radius:28px;padding:28px;box-shadow:0 24px 48px -16px rgba(18,33,58,.45);max-width:420px;justify-self:center;width:100%}
+.hero-visual{position:relative;min-height:560px;display:flex;align-items:center;justify-content:center}.hero-phone{width:min(310px,72%);aspect-ratio:540/1170;object-fit:cover;object-position:top;border-radius:38px;border:10px solid #101827;box-shadow:0 30px 60px -24px rgba(18,33,58,.5);transform:rotate(-3deg);margin-inline-end:72px;background:var(--sand)}.hero-visual .next{position:absolute;z-index:2;inset-inline-end:-8px;bottom:54px;max-width:340px;transform:rotate(2deg)}.next{background:linear-gradient(160deg,var(--night-2),var(--night));color:#fff;border-radius:28px;padding:28px;box-shadow:0 24px 48px -16px rgba(18,33,58,.45);max-width:420px;justify-self:center;width:100%}
 .next .top{display:flex;justify-content:space-between;align-items:center;color:var(--on-night);font-size:15px;font-weight:600}
 .next h2{font:700 26px/1.35 "Plex",sans-serif;margin:18px 0 4px}
 .next .when{color:var(--on-night)}
@@ -186,6 +186,7 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
   .brand{margin-top:36px}
   .ribbon{inset-inline-start:16px;height:116px}
   .brand{padding-inline-start:60px}
+  .hero-visual{min-height:500px}.hero-phone{width:min(290px,72%);margin-inline-end:48px}.hero-visual .next{max-width:300px;inset-inline-end:0;bottom:28px}
 }
 </style>
 </head>
@@ -209,7 +210,7 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
       <p class="lead"><span lang="ar">رتّب حصصك، دروسك الخاصة، مهامك ومتابعاتك من شاشة واحدة صُممت ليوم المعلّم الحقيقي. تعمل دون إنترنت، وتبقى بياناتك معك.</span><span lang="en">Plan classes, private lessons, tasks and follow-ups from one place built for a real teacher’s day. Works offline, with your data kept with you.</span></p>
       <p class="cta"><a class="go" href="https://play.google.com/store/apps/details?id=com.mufakra.app.mufakra" rel="noopener"><span lang="ar">حمّلها من Google Play</span><span lang="en">Get it on Google Play</span></a><small><span lang="ar">متاحة الآن على Google Play</span><span lang="en">Now available on Google Play</span></small></p>
     </div>
-    <aside class="next" aria-label="مثال على شاشة اليوم">
+    <div class="hero-visual"><img class="hero-phone" src="shots/ar-1-today.jpg" width="540" height="1170" alt="واجهة مُفكّرة الحقيقية: شاشة اليوم وجدول المعلم"><aside class="next" aria-label="مثال على شاشة اليوم">
       <div class="top"><span><span lang="ar">التالي</span><span lang="en">Up next</span></span><span><span lang="ar">مثال</span><span lang="en">Sample</span></span></div>
       <h2><span lang="ar">درس خصوصي · فيزياء</span><span lang="en">Private lesson · Physics</span></h2>
       <div class="when"><span lang="ar">يبدأ ٤:٣٠ م</span><span lang="en">Starts 4:30 PM</span></div>
@@ -218,7 +219,7 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
           <div class="n"><div><span lang="ar">٤٢</span><span lang="en">42</span><small><span lang="ar">دقيقة</span><span lang="en">min</span></small></div></div></div>
         <div class="leaveby"><span lang="ar">اخرج قبل ٣:٥٥ م<br>لتصل في موعدك</span><span lang="en">Leave by 3:55 PM<br>to arrive on time</span></div>
       </div>
-    </aside>
+    </aside></div>
   </div>
 </header>
 
