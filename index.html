@@ -87,7 +87,7 @@ html[lang=en] h1{letter-spacing:-.025em;line-height:1.08;max-width:12ch}
 }
 
 /* the one dark surface, as in the app: the "next" block on Today */
-.hero-visual{position:relative;min-height:560px;display:flex;align-items:center;justify-content:center}.hero-phone{width:min(310px,72%);aspect-ratio:540/1170;object-fit:cover;object-position:top;border-radius:38px;border:10px solid #101827;box-shadow:0 30px 60px -24px rgba(18,33,58,.5);transform:rotate(-3deg);margin-inline-end:72px;background:var(--sand)}.hero-visual .next{position:absolute;z-index:2;inset-inline-end:-8px;bottom:54px;max-width:340px;transform:rotate(2deg)}.next{background:linear-gradient(160deg,var(--night-2),var(--night));color:#fff;border-radius:28px;padding:28px;box-shadow:0 24px 48px -16px rgba(18,33,58,.45);max-width:420px;justify-self:center;width:100%}
+.hero-visual{position:relative;height:540px;min-width:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible;padding:18px 0 18px 24px}.hero-phone{display:block;width:238px;height:516px;object-fit:cover;object-position:top;border-radius:32px;border:8px solid #101827;box-shadow:0 28px 54px -24px rgba(18,33,58,.5);transform:rotate(-2deg);background:var(--sand);flex:none}.hero-visual .next{position:absolute;z-index:2;inset-inline-end:0;bottom:28px;max-width:310px;transform:rotate(1.5deg)}.next{background:linear-gradient(160deg,var(--night-2),var(--night));color:#fff;border-radius:28px;padding:28px;box-shadow:0 24px 48px -16px rgba(18,33,58,.45);max-width:420px;justify-self:center;width:100%}
 .next .top{display:flex;justify-content:space-between;align-items:center;color:var(--on-night);font-size:15px;font-weight:600}
 .next h2{font:700 26px/1.35 "Plex",sans-serif;margin:18px 0 4px}
 .next .when{color:var(--on-night)}
@@ -186,7 +186,7 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
   .brand{margin-top:36px}
   .ribbon{inset-inline-start:16px;height:116px}
   .brand{padding-inline-start:60px}
-  .hero-visual{min-height:500px}.hero-phone{width:min(290px,72%);margin-inline-end:48px}.hero-visual .next{max-width:300px;inset-inline-end:0;bottom:28px}
+  .hero-visual{height:auto;min-height:620px;display:flex;justify-content:center;align-items:flex-start;padding:8px 0 0;overflow:hidden}.hero-phone{width:230px;height:498px;transform:rotate(-1deg);margin:0}.hero-visual .next{inset-inline:auto;left:50%;bottom:18px;width:min(92%,320px);max-width:320px;transform:translateX(-50%) rotate(1deg)}
 }
 </style>
 </head>
