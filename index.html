@@ -146,6 +146,21 @@ dl.more div{padding:20px 0;border-top:1px solid var(--line)}
 dt{font-weight:700;font-size:19px}
 dd{margin:4px 0 0;color:var(--ink-2)}
 
+/* product story */
+.story{padding:88px 0 104px;background:var(--paper)}
+.story-intro{max-width:720px;margin-bottom:42px}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.story-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 12px 30px -28px rgba(18,33,58,.45)}
+.story-icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:var(--sand);font-size:24px;margin-bottom:18px}
+.story-card h3{margin:0 0 8px;font:700 21px/1.45 "Plex",sans-serif}
+.story-card p{margin:0;color:var(--ink-2);font-size:16px}
+.final-cta{padding:0 0 112px}
+.final-box{background:linear-gradient(145deg,var(--night-2),var(--night));color:#fff;border-radius:32px;padding:54px;display:flex;justify-content:space-between;gap:32px;align-items:center}
+.final-box h2{margin:0 0 10px;font:700 clamp(28px,4vw,44px)/1.25 "Plex",sans-serif}
+.final-box p{margin:0;color:var(--on-night);max-width:38em}
+.final-box a{flex:none;display:inline-flex;align-items:center;min-height:54px;padding:0 26px;border-radius:999px;background:#fff;color:var(--night);font-weight:700;text-decoration:none}
+@media(max-width:860px){.story-grid{grid-template-columns:1fr}.story{padding:64px 0 72px}.final-cta{padding:0 0 72px}.final-box{padding:36px 28px;display:block}.final-box a{margin-top:24px}}
+
 /* privacy */
 .private{background:var(--night);color:#fff;border-radius:32px;padding:72px 56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
 .private h2{font:700 clamp(30px,4.4vw,52px)/1.25 "Plex",sans-serif;margin:0;max-width:12ch}
@@ -191,8 +206,8 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
 <rect x="44" y="1" width="9" height="27" rx="2" fill="#1E4BD1"/>
 </svg><b><span lang="ar">مُفكّرة</span><span lang="en">MUFAKRA</span></b></div>
       <h1><span lang="ar">يومك كمعلّم، في دفتر واحد.</span><span lang="en">Your teaching day, in one notebook.</span></h1>
-      <p class="lead"><span lang="ar">الحصص والدروس الخصوصية والمدفوعات في مكان واحد، تعمل دون إنترنت، وبياناتك لا تغادر جهازك.</span><span lang="en">Classes, private lessons and payments in one place. It works offline, and your data never leaves your phone.</span></p>
-      <p class="cta"><a class="go" href="https://play.google.com/store/apps/details?id=com.mufakra.app.mufakra" rel="noopener"><span lang="ar">حمّلها من Google Play</span><span lang="en">Get it on Google Play</span></a><small><span lang="ar">مجانية · لأندرويد · نسخة اختبار مفتوحة</span><span lang="en">Free · Android · open test</span></small></p>
+      <p class="lead"><span lang="ar">رتّب حصصك، دروسك الخاصة، مهامك ومتابعاتك من شاشة واحدة صُممت ليوم المعلّم الحقيقي. تعمل دون إنترنت، وتبقى بياناتك معك.</span><span lang="en">Plan classes, private lessons, tasks and follow-ups from one place built for a real teacher’s day. Works offline, with your data kept with you.</span></p>
+      <p class="cta"><a class="go" href="https://play.google.com/store/apps/details?id=com.mufakra.app.mufakra" rel="noopener"><span lang="ar">حمّلها من Google Play</span><span lang="en">Get it on Google Play</span></a><small><span lang="ar">متاحة الآن على Google Play</span><span lang="en">Now available on Google Play</span></small></p>
     </div>
     <aside class="next" aria-label="مثال على شاشة اليوم">
       <div class="top"><span><span lang="ar">التالي</span><span lang="en">Up next</span></span><span><span lang="ar">مثال</span><span lang="en">Sample</span></span></div>
@@ -217,11 +232,25 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
 <section class="s-day">
   <div class="wrap split">
     <div>
-      <h2 class="t"><span lang="ar">اعرف ما التالي قبل أن يحين.</span><span lang="en">Know what is next before it comes.</span></h2>
-      <p class="sub"><span lang="ar">الحصص بلون، والدروس الخصوصية بلون آخر، فيفرق يومك بنظرة. وللدرس الخصوصي وقت مغادرة يحسب معه المشوار.</span><span lang="en">Classes in one colour, private lessons in another, so your day reads at a glance. A private lesson also gets a leave-by time that counts the trip.</span></p>
+      <h2 class="t"><span lang="ar">كل يومك أمامك، من أول نظرة.</span><span lang="en">Your whole teaching day, at a glance.</span></h2>
+      <p class="sub"><span lang="ar">حصص المدرسة، الدروس الخاصة، المهام والمواعيد مرتبة في خط يوم واضح. تعرف ما التالي، ومتى يبدأ، وما الذي يحتاج انتباهك.</span><span lang="en">School classes, private lessons, tasks and appointments come together in one clear day view. See what is next, when it starts, and what needs your attention.</span></p>
       <p class="legend"><span lang="ar">يوم تجريبي</span><span lang="en">A sample day</span></p>
     </div>
     <ol class="day"><li class="ink"><time><span lang="ar">٨:٠٠ ص</span><span lang="en">8:00 AM</span></time><div><strong><span lang="ar">حصة · الصف الثاني</span><span lang="en">Class · Grade 2</span></strong></div></li><li class="ink"><time><span lang="ar">١١:٣٠ ص</span><span lang="en">11:30 AM</span></time><div><strong><span lang="ar">حصة · الصف الرابع</span><span lang="en">Class · Grade 4</span></strong></div></li><li class="green"><time><span lang="ar">٤:٣٠ م</span><span lang="en">4:30 PM</span></time><div><strong><span lang="ar">درس خصوصي · فيزياء</span><span lang="en">Private lesson · Physics</span></strong><em class="leave"><span lang="ar">اخرج قبل ٣:٥٥ م</span><span lang="en">Leave by 3:55 PM</span></em></div></li><li class="green"><time><span lang="ar">٦:٠٠ م</span><span lang="en">6:00 PM</span></time><div><strong><span lang="ar">مجموعة · رياضيات</span><span lang="en">Group · Maths</span></strong></div></li></ol>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <div class="story-intro">
+      <h2 class="t"><span lang="ar">مُفكّرة تفهم يوم المعلّم.</span><span lang="en">Mufakra understands a teacher’s day.</span></h2>
+      <p class="sub"><span lang="ar">بدل التنقل بين دفتر، تقويم، ملاحظات ورسائل، اجمع ما تحتاجه في مكان واحد واضح وسريع.</span><span lang="en">Instead of jumping between a notebook, calendar, notes and messages, keep the essentials together in one clear, fast place.</span></p>
+    </div>
+    <div class="story-grid">
+      <article class="story-card"><div class="story-icon" aria-hidden="true">🏫</div><h3><span lang="ar">المدرسة</span><span lang="en">School</span></h3><p><span lang="ar">جدول حصصك وصفوفك وموادك أمامك، لتعرف أين تذهب وما التالي دون بحث.</span><span lang="en">Keep classes, grades and subjects in view so you always know where to go and what comes next.</span></p></article>
+      <article class="story-card"><div class="story-icon" aria-hidden="true">📘</div><h3><span lang="ar">الدروس الخاصة</span><span lang="en">Private lessons</span></h3><p><span lang="ar">رتّب الطلاب والمجموعات والمواعيد والمدفوعات، واعرف وقت المغادرة قبل الموعد.</span><span lang="en">Organise students, groups, appointments and payments, with a leave-by time before the lesson.</span></p></article>
+      <article class="story-card"><div class="story-icon" aria-hidden="true">✓</div><h3><span lang="ar">المهام والمتابعة</span><span lang="en">Tasks & follow-up</span></h3><p><span lang="ar">اربط المهمة بطالب أو حصة أو مجموعة، ودع «اليوم» يجمع لك ما يحتاج انتباهك.</span><span lang="en">Tie a task to a student, class or group and let Today bring together what needs your attention.</span></p></article>
+    </div>
   </div>
 </section>
 
@@ -234,15 +263,15 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
       <div class="total"><span><span lang="ar">المستحق الآن</span><span lang="en">Owed now</span></span><b><span lang="ar">٤٠٠</span><span lang="en">400</span></b></div>
     </div>
     <div>
-      <h2 class="t"><span lang="ar">حساب يشبه دفتر الحسابات.</span><span lang="en">Accounts that read like a ledger.</span></h2>
-      <p class="sub"><span lang="ar">لو على الطالب دين من قبل التطبيق، سجّله كرصيد سابق. ولو سامحت في جزء، سجّله إعفاءً بسبب. لا يُحسب الإعفاء مالاً مستلَماً، وتُسدَّد الدفعات من الأقدم أولاً.</span><span lang="en">If a student owed you before the app, record it as an opening balance. If you forgive part of it, record a write-off with a reason. A write-off never counts as money received, and payments settle the oldest first.</span></p>
+      <h2 class="t"><span lang="ar">متابعة مالية واضحة، بلا تعقيد.</span><span lang="en">Clear payment tracking, without the clutter.</span></h2>
+      <p class="sub"><span lang="ar">اعرف المستحق والمدفوع لكل طالب، وسجّل الرصيد السابق أو الإعفاء عند الحاجة. كل حركة محفوظة بوضوح لتعرف موقف الحساب فورًا.</span><span lang="en">See what each student owes and has paid, with opening balances and adjustments when needed. Every movement stays clear so you always know where the account stands.</span></p>
     </div>
   </div>
 </section>
 
 <section class="s-more">
   <div class="wrap">
-    <h2 class="t"><span lang="ar">وتفاصيل صغيرة تريحك.</span><span lang="en">And small things that help.</span></h2>
+    <h2 class="t"><span lang="ar">كل ما يحتاجه المعلّم… بدون زحمة.</span><span lang="en">The tools a teacher needs — without the clutter.</span></h2>
     <dl class="more"><div><dt><span lang="ar">مهام مرتبطة بعملك</span><span lang="en">Tasks tied to your work</span></dt><dd><span lang="ar">قائمة مهام بتاريخ وتكرار وتذكير، واربط المهمة بطالب أو مجموعة أو حصة فتظهر في ملفه وفي «اليوم».</span><span lang="en">A to-do list with dates, repeats and reminders. Tie a task to a student, a group or a class and it shows on their page and on Today.</span></dd></div><div><dt><span lang="ar">تذكيرات تتحكم فيها</span><span lang="en">Reminders you control</span></dt><dd><span lang="ar">لكل نوع اختر: تنبيهاً يظهر على الشاشة، أو هادئاً، أو متوقفاً. مع ساعات صمت، وإخفاء التفاصيل عن شاشة القفل.</span><span lang="en">For each kind, choose a pop-up, a quiet alert, or off. Plus quiet hours, and details hidden on the lock screen.</span></dd></div><div><dt><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></dt><dd><span lang="ar">رسالة جاهزة لولي الأمر أو للمجموعة كلها. أنت من يضغط إرسال، والتطبيق لا يرسل شيئاً بنفسه.</span><span lang="en">A ready message for a parent or a whole group. You press send; the app never sends anything by itself.</span></dd></div><div><dt><span lang="ar">تقارير PDF</span><span lang="en">PDF reports</span></dt><dd><span lang="ar">تقرير شهري لكل طالب أو لكل المدفوعات، تطبعه أو ترسله.</span><span lang="en">A monthly report per student or for all payments, to print or share.</span></dd></div><div><dt><span lang="ar">استيراد من Excel</span><span lang="en">Import from Excel</span></dt><dd><span lang="ar">لديك قائمة طلاب جاهزة؟ ارفعها مرة واحدة بدل الكتابة من جديد.</span><span lang="en">Already have a student list? Bring it in once instead of retyping.</span></dd></div><div><dt><span lang="ar">لون لكل مادة وطالب</span><span lang="en">A colour for each subject and student</span></dt><dd><span lang="ar">تتعرف على المادة والطالب بنظرة، على خلفية دفتر مسطّر أو مربعات تختارها.</span><span lang="en">Spot a subject or a student at a glance, on a ruled or grid notebook page you choose.</span></dd></div><div><dt><span lang="ar">نسخ احتياطي</span><span lang="en">Backups</span></dt><dd><span lang="ar">ملف مشفّر بكلمة مرور، أو مزامنة اختيارية إلى مجلد التطبيق المخفي في Google Drive الخاص بك.</span><span lang="en">A password-encrypted file, or optional sync to the app's hidden folder in your own Google Drive.</span></dd></div><div><dt><span lang="ar">عربي وإنجليزي</span><span lang="en">Arabic and English</span></dt><dd><span lang="ar">واجهة كاملة باللغتين، ووقت بنظام ١٢ ساعة أو ٢٤ ساعة.</span><span lang="en">Fully in both languages, with 12- or 24-hour time.</span></dd></div></dl>
   </div>
 </section>
@@ -262,6 +291,15 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
     </div>
   </div>
 </section>
+<section class="final-cta">
+  <div class="wrap">
+    <div class="final-box">
+      <div><h2><span lang="ar">ابدأ يومك أخف.</span><span lang="en">Make your teaching day lighter.</span></h2><p><span lang="ar">مُفكّرة متاحة الآن على Android. افتحها، رتّب يومك، واحتفظ ببياناتك معك.</span><span lang="en">Mufakra is available now on Android. Open it, organise your day, and keep your data with you.</span></p></div>
+      <a href="https://play.google.com/store/apps/details?id=com.mufakra.app.mufakra" rel="noopener"><span lang="ar">حمّلها من Google Play</span><span lang="en">Get it on Google Play</span></a>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -284,7 +322,7 @@ footer .langlink:focus-visible{outline:3px solid var(--royal);outline-offset:3px
   }
   var saved = null;
   try { saved = localStorage.getItem(KEY); } catch (e) {}
-  set(saved || ((navigator.language || "ar").toLowerCase().indexOf("ar") === 0 ? "ar" : "en"));
+  set(saved || "ar");
   Array.prototype.forEach.call(document.querySelectorAll("[data-lang-toggle]"), function (b) {
     b.addEventListener("click", function () {
       var l = root.lang === "ar" ? "en" : "ar"; set(l);
